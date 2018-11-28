@@ -27,13 +27,15 @@ module.exports = {
   ** Global CSS
   */
   css: [
-      '@/assets/styles/main.scss'
+      '@/assets/styles/main.scss',
+      '@fortawesome/fontawesome-svg-core/styles.css'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+      '~/plugins/fontawesome.js'
   ],
 
   /*
@@ -45,6 +47,7 @@ module.exports = {
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma'
   ],
+
   /*
   ** Axios module configuration
   */

@@ -7,13 +7,14 @@
             </h1>
             <div class="links">
                 <a
+                    class="icon is-large fa-2x"
                     href="https://nuxtjs.org/"
-                    target="_blank"
-                    class="button--green">Documentation</a>
+                    target="_blank"><font-awesome-icon :icon="['fab','facebook']" /></a>
                 <a
-                    href="https://github.com/nuxt/nuxt.js"
-                    target="_blank"
-                    class="button--grey">GitHub</a>
+                    class="icon is-large fa-2x"
+                    href="https://nuxtjs.org/"
+                    target="_blank"><font-awesome-icon :icon="['fab','instagram']" /></a>
+
             </div>
         </div>
     </section>
@@ -59,5 +60,9 @@
 
     .links {
         padding-top: 15px;
+    }
+
+    .icon {
+        color: black;
     }
 </style>
