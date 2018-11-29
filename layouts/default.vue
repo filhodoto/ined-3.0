@@ -1,15 +1,18 @@
 <template>
     <div>
+        <carousel></carousel>
         <nuxt/>
         <Footer></Footer>
     </div>
 </template>
 <script>
     import Footer from '@/components/Footer.vue'
+    import Carousel from '~/components/Carousel.vue'
 
     export default {
         components: {
-            Footer
+            Footer,
+            Carousel
         }
     }
 </script>

@@ -1,6 +1,9 @@
 <template>
     <section class="wrapper">
-        <logo class="logo"/>
+        <!--<logo class="logo"/>-->
+        <transition appear name="fade">
+            <img class="logo" src="~/assets/images/ined-logo.png">
+        </transition>
         <transition appear name="fade">
             <h2 class="intro">Somos um estudio constituido por
                 <mark>várias actividades</mark>
@@ -60,7 +63,7 @@
     export default {
         components: {
             Logo,
-            ButtonComponent
+            ButtonComponent,
         },
 
         data() {
@@ -71,6 +74,9 @@
 
         mounted() {
           this.show = true;
+        },
+
+        methods: {
         }
     }
 </script>
@@ -98,6 +104,7 @@
 
     .logo {
         margin-bottom: 50px;
+        max-width: 300px;
     }
 
     .intro {
@@ -154,6 +161,8 @@
         hr {
             width: 80%;
             border: none;
+            background: $color-primary;
+            opacity: 0.2;
         }
     }
 
@@ -188,6 +197,8 @@
 
             .button {
                 width: 100%;
+                background: none;
+                border-color: $color-primary;
 
                 @include respond-to(xsmall) {
                     width: auto;
