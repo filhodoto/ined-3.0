@@ -1,6 +1,6 @@
 <template>
     <div>
-        <carousel></carousel>
+        <carousel v-if="showCarousel"></carousel>
         <nuxt/>
         <Footer></Footer>
     </div>
@@ -13,6 +13,12 @@
         components: {
             Footer,
             Carousel
+        },
+
+        data() {
+            return {
+                showCarousel: false
+            }
         }
     }
 </script>

@@ -1,9 +1,9 @@
 <template>
     <section class="wrapper">
-        <!--<logo class="logo"/>-->
-        <transition appear name="fade">
-            <img class="logo" src="~/assets/images/ined-logo.png">
-        </transition>
+        <logo class="logo"/>
+        <!--<transition appear name="fade">-->
+            <!--<img class="logo" src="~/assets/images/ined-logo.png">-->
+        <!--</transition>-->
         <transition appear name="fade">
             <h2 class="intro">Somos um estudio constituido por
                 <mark>várias actividades</mark>
@@ -92,7 +92,7 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 10px 20px;
+        padding: 30px 20px;
 
         & > * {
 
