@@ -1,39 +1,55 @@
 <template>
     <section class="wrapper">
         <logo class="logo"/>
-        <h2 class="subtitle">Somos um estudio constituido por
-            <mark>várias actividades</mark>
-             que convergem na 
-            <mark>publicidade</mark>
-            e o nosso alvo é promover as marcas dos clientes
-        </h2>
-        <section class="intro">
-            <hr>
-            <p>A IN.ED é um estúdio, sediado nas Caldas da Rainha, que actua no mercado da publicidade e do design. Qualidade e criatividade são as palavras que melhor nos definem e é graças a estas que vamos marcando pela diferença num mercado de trabalho cada vez mais exigente e competitivo.</p>
-            <p class="contacts">Contacte-nos através do nosso email <a href="mailto:geral@ined.com.pt" target="_blank">geral@ined.com.pt</a> ou telefone <a href="tel:00351968274676" target="_blank">968 274 676</a></p>
-        </section>
-        <ul class="links">
-            <li>
-                <button-component
-                        class="facebook is-large"
-                        :icon="['fab','facebook']"
-                        text="Facebook"
-                        :link="'https://www.facebook.com/ined.com.pt'"
-                        :size="'is-medium'">
+        <transition appear name="fade">
+            <h2 class="intro">Somos um estudio constituido por
+                <mark>várias actividades</mark>
+                 que convergem na 
+                <mark>publicidade</mark>
+                e o nosso alvo é promover as marcas dos clientes
+            </h2>
+        </transition>
+        <transition appear name="fade">
+            <section class="description">
+                <hr>
+                <p>A IN.ED é um estúdio, sediado nas Caldas da Rainha, que actua no mercado da publicidade e do design.
+                    Qualidade e criatividade são as palavras que melhor nos definem e é graças a estas que vamos marcando
+                    pela diferença num mercado de trabalho cada vez mais exigente e competitivo.</p>
+                <ul class="contacts">
+                    <li class="contacts-item">
+                        <font-awesome-icon :icon="['fas', 'envelope']"/>
+                        <a href="mailto:geral@ined.com.pt">geral@ined.com.pt</a>
+                    </li>
+                    <li class="contacts-item">
+                        <font-awesome-icon :icon="['fas', 'phone']"/>
+                        <a href="tel:00351968274676">968 274 676</a>
+                    </li>
+                </ul>
+            </section>
+        </transition>
+        <transition appear name="fade">
+            <ul class="links">
+                <li>
+                    <button-component
+                            class="facebook is-large"
+                            :icon="['fab','facebook']"
+                            text="Facebook"
+                            :link="'https://www.facebook.com/ined.com.pt'"
+                            :size="'is-medium'">
 
-                </button-component>
-            </li>
-            <li>
-                <button-component
-                        class="instagram is-large"
-                        :icon="['fab','instagram']"
-                        text="Instagram"
-                        :link="'https://www.instagram.com/ined.publicidade/'"
-                        :size="'is-medium'">
-
-                </button-component>
-            </li>
-        </ul>
+                    </button-component>
+                </li>
+                <li>
+                    <button-component
+                            class="instagram is-large"
+                            :icon="['fab','instagram']"
+                            text="Instagram"
+                            :link="'https://www.instagram.com/ined.publicidade/'"
+                            :size="'is-medium'">
+                    </button-component>
+                </li>
+            </ul>
+        </transition>
     </section>
 </template>
 
@@ -45,12 +61,23 @@
         components: {
             Logo,
             ButtonComponent
+        },
+
+        data() {
+            return {
+                show: false
+            }
+        },
+
+        mounted() {
+          this.show = true;
         }
     }
 </script>
 
 <style lang='scss' scoped>
     @import '~/assets/styles/main.scss';
+    $transition-duration: 1.5s;
 
     .wrapper {
         display: flex;
@@ -73,21 +100,13 @@
         margin-bottom: 50px;
     }
 
-    .title {
-        font-family: $body-font-secondary;
-        display: block;
-        font-weight: 300;
-        font-size: 100px;
-        color: #35495e;
-        letter-spacing: 1px;
-    }
-
-    .subtitle {
+    .intro {
         font-weight: 300;
         font-size: 25px;
         margin: 0;
         word-spacing: 1px;
         line-height: 140%;
+        transition-duration: $transition-duration;
 
         @include respond-to(medium) {
             font-size: 35px;
@@ -95,19 +114,41 @@
         }
     }
 
-    .intro {
+    .description {
         font-size: 17px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        transition-delay: 0.5s;
+        transition-duration: $transition-duration;
+
+        @include respond-to(medium) {
+            max-width: 70%;
+        }
 
         p {
             padding: 5px 0;
         }
 
+        .contacts {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-        @include respond-to(medium) {
-            max-width: 70%;
+            @include respond-to(xsmall) {
+                flex-direction: row;
+            }
+
+
+            .contacts-item {
+                padding: 15px 15px 0;
+                font-size: 18px;
+            }
+
+            a {
+                color: $color-secondary;
+                margin-left: 5px;
+            }
         }
 
         hr {
@@ -128,6 +169,8 @@
         flex-direction: column;
         margin-top: 40px;
         width: 100%;
+        transition-delay: 1s;
+        transition-duration: $transition-duration;
 
         @include respond-to(xsmall) {
             width: auto;

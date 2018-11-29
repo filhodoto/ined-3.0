@@ -6,17 +6,11 @@
         <font-awesome-icon :icon="icon"/>
         <span>{{text}}</span>
     </a>
-    <button v-else
-            @click="handleClick"
-            class="button">
-        <font-awesome-icon :icon="icon"/>
-        <span>{{text}}</span>
-    </button>
 </template>
 
 <script>
     export default {
-        name: "button",
+        name: "button-component",
 
         props: ['handleClick', 'link', 'icon', 'text']
     }

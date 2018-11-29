@@ -27,8 +27,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
-      '@/assets/styles/main.scss',
-      '@fortawesome/fontawesome-svg-core/styles.css'
+      '@fortawesome/fontawesome-svg-core/styles.css',
+      '@/assets/styles/main.scss'
   ],
 
   /*

@@ -4,7 +4,7 @@ body,
 #__nuxt,
 #__layout,
 #__layout > div:first-of-type {
-  height: 100%;
+  min-height: 100vh;
 }
 
 body {
@@ -16,11 +16,11 @@ main {
 }
 
 a {
-  color: $color-secondary;
+  color: $color-primary;
   transition: color 0.3s ease-in-out;
 
   &:hover {
-    color: $color-primary;
+    color: $color-secondary;
   }
 }
 
