@@ -62,7 +62,6 @@
         padding: 10px 20px;
 
         & > * {
-            /*border: 1px solid red;*/
 
             @include respond-to(medium) {
                 max-width: 80%;
@@ -88,9 +87,11 @@
         font-size: 25px;
         margin: 0;
         word-spacing: 1px;
+        line-height: 140%;
 
         @include respond-to(medium) {
             font-size: 35px;
+            line-height: 120%;
         }
     }
 
@@ -128,7 +129,7 @@
         margin-top: 40px;
         width: 100%;
 
-        @include respond-to(small) {
+        @include respond-to(xsmall) {
             width: auto;
             flex-direction: row;
         }
