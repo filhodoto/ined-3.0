@@ -15,6 +15,15 @@ main {
   box-sizing: border-box;
 }
 
+a {
+  color: $color-secondary;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
 ul,
 li {
   list-style: none;
